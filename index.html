@@ -73,7 +73,8 @@ footer{color:var(--soft);font-size:15px;padding-top:0}
 <body>
 <!--
   HOW TO EDIT THIS PAGE
-  - Easiest: open editor.html on your Mac, change the boxes, click Save.
+  - Easiest: open https://ndnilakshi.github.io/#edit , sign in with your GitHub key, click text to change it, then Publish.
+  - Or: open editor.html on your Mac, change the boxes, click Save, and upload the new index.html to GitHub.
   - Or edit by hand: change only the words between the tags, e.g. <p>change this text</p>.
     Look for the lines that start with "EDIT:" below.
 -->
@@ -242,17 +243,24 @@ const PAL=[
 ['#dce2ee','#f2f4f9','#bac3d8','#97a1bd','#707a98']
 ];
 let PH=[];try{PH=JSON.parse($('#photos').textContent)}catch(err){}
-PH=PH.map((x,i)=>({src:x.src||'',cap:x.cap||'',pal:PAL[i%PAL.length]}));
 const scene=(c,i,gid)=>{gid=gid||'g'+i;let r=i*7919+11;const rnd=()=>(r=r*16807%2147483647)/2147483647;
   const hills=[2,3,4].map((k,j)=>{const y0=160+j*40;let d='M0 300 L0 '+y0;for(let x=0;x<=400;x+=50){d+=' Q'+(x+25)+' '+(y0-rnd()*(50-j*10)).toFixed(0)+' '+(x+50)+' '+(y0-rnd()*(30-j*6)).toFixed(0)}return '<path d="'+d+' L400 300Z" fill="'+c[k]+'"/>'}).join('');
   return '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="'+gid+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+c[0]+'"/><stop offset="1" stop-color="'+c[1]+'"/></linearGradient></defs><rect width="400" height="300" fill="url(#'+gid+')"/><circle cx="'+(90+rnd()*220).toFixed(0)+'" cy="'+(70+rnd()*40).toFixed(0)+'" r="20" fill="#fff" opacity=".7"/>'+hills+'</svg>'};
 const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
 const pic=(x,i,gid)=>x.src?'<img src="'+esc(x.src)+'" alt="'+esc(x.cap||'Photograph')+'" loading="lazy">':scene(x.pal,i,gid);
-$('#gal').innerHTML=PH.map((x,i)=>'<button type="button" id="ph'+i+'" data-i="'+i+'" class="'+(i==0?'big':'')+'" aria-label="Open photo '+(i+1)+'">'+pic(x,i)+(x.cap?'<span>'+esc(x.cap)+'</span>':'')+'</button>').join('');
+const drawGal=list=>{PH=list.map((x,i)=>({src:x.src||'',cap:x.cap||'',pal:PAL[i%PAL.length]}));$('#gal').innerHTML=PH.map((x,i)=>'<button type="button" id="ph'+i+'" data-i="'+i+'" class="'+(i==0?'big':'')+'" aria-label="Open photo '+(i+1)+'">'+pic(x,i)+(x.cap?'<span>'+esc(x.cap)+'</span>':'')+'</button>').join('')};
+drawGal(PH);
+window.siteGallery=drawGal;
 const lb=$('#lb');
 $('#gal').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const i=+b.dataset.i;$('#lbimg').innerHTML=pic(PH[i],i,'lbg');$('#lbcap').textContent=PH[i].cap;try{lb.showModal()}catch(err){}});
 $('#lbx').addEventListener('click',()=>lb.close());
 lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+
+/* edit mode: open the site with #edit at the end of the address */
+const loadEdit=()=>{if(document.getElementById('ed-js'))return;const sc=document.createElement('script');sc.id='ed-js';sc.src='edit.js';document.body.append(sc)};
+let wantEdit=location.hash==='#edit';try{if(localStorage.getItem('nd-site-token'))wantEdit=true}catch(err){}
+if(wantEdit)loadEdit();
+window.addEventListener('hashchange',()=>{if(location.hash==='#edit')loadEdit()});
 }
 </script>
 </body>
