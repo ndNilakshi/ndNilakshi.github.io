@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nilakshi Das</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* VOICE quiet, warm and elegant; a personal page, not a CV
+   IDEA a physicist's notebook: fine ink Feynman diagrams in the margins, plain handwriting-like text
+   PICTURE three Feynman diagrams in fountain-pen blue: b -> c tau nu (hero), a b -> s l l penguin (research), a B mixing box (contact)
+   COLOUR warm white #fcfbf8, ink #2b2926, pen blue #3c4b8f, soft grey #77736d, hairline #e7e3dc; night #17171b
+   TYPE Spectral throughout: light for the name, italic for headings, regular for text
+   LAYOUT laptop: name and short text left, diagram right, then calm sections with a diagram in the margin; phone: one column, diagram under the name */
+:root{color-scheme:light dark;--bg:light-dark(#fcfbf8,#17171b);--ink:light-dark(#2b2926,#ebe8e3);--soft:light-dark(#6f6b65,#a9a59f);--pen:light-dark(#3c4b8f,#a8b4ee);--rule:light-dark(#e7e3dc,#2c2c33);--card:light-dark(#f5f2ed,#1f1f25)}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.7 Spectral,Georgia,serif;overflow-x:clip}
+a{color:var(--pen);text-decoration-thickness:1px;text-underline-offset:4px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--pen);outline-offset:3px;border-radius:3px}
+h1,h2,h3{font-weight:400;line-height:1.1;letter-spacing:-.01em;text-wrap:balance;margin:0}
+.band{padding-block:clamp(36px,6vw,80px);padding-left:max(6vw,18px);padding-right:max(6vw,18px)}
+.wrap{max-width:1080px;margin:0 auto}
+nav{display:flex;flex-wrap:wrap;gap:4px 28px;align-items:baseline;justify-content:space-between;padding-top:26px}
+nav .home{color:var(--ink);text-decoration:none;font-size:19px}
+nav ul{display:flex;flex-wrap:wrap;gap:0 22px;list-style:none;margin:0;padding:0}
+nav ul a{color:var(--soft);text-decoration:none;font-size:16px;display:inline-block;padding:10px 0}
+nav ul a:hover{color:var(--pen)}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px 56px;align-items:center;padding-top:clamp(36px,7vw,96px)}
+h1{font-weight:300;font-size:clamp(46px,7vw,76px);line-height:1}
+.sub{font-style:italic;color:var(--soft);font-size:20px;margin:14px 0 22px}
+.hero p.intro{margin:0 0 24px;max-width:38ch;font-size:20px}
+.links{display:flex;flex-wrap:wrap;gap:6px 26px;font-size:17px}
+.links a{display:inline-block;padding:8px 0}
+figure{margin:0}
+.fd{color:var(--pen)}
+.fd svg{display:block;width:100%;height:auto;overflow:visible}
+.fd figcaption{font-style:italic;color:var(--soft);font-size:15px;margin-top:6px;text-align:center}
+hr{border:0;border-top:1px solid var(--rule);margin:0}
+h2{font-style:italic;font-size:clamp(30px,3.6vw,38px);margin-bottom:22px}
+.two{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px 64px;align-items:center}
+.two p{margin:0 0 16px;max-width:62ch}
+.tl{list-style:none;margin:0;padding:0;max-width:760px}
+.tl li{display:grid;grid-template-columns:9.5em minmax(0,1fr);gap:2px 28px;padding:12px 0;border-top:1px solid var(--rule)}
+.tl li:last-child{border-bottom:1px solid var(--rule)}
+.tl .yr{color:var(--soft);font-variant-numeric:oldstyle-nums;white-space:nowrap}
+.lede{margin:-8px 0 24px;color:var(--soft)}
+.gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:clamp(150px,16vw,210px);gap:14px}
+.gal button{all:unset;cursor:pointer;position:relative;overflow:hidden;border-radius:12px;display:block;background:var(--card)}
+.gal button:focus-visible{outline:2px solid var(--pen);outline-offset:3px}
+.gal .big{grid-column:span 2;grid-row:span 2}
+.gal svg,.gal img,#lbimg svg,#lbimg img{display:block;width:100%;height:100%;object-fit:cover}
+.gal span{position:absolute;left:0;right:0;bottom:0;padding:20px 14px 10px;font-size:15px;font-style:italic;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.45))}
+dialog{border:0;padding:0;background:var(--bg);color:var(--ink);border-radius:12px;width:min(92vw,960px)}
+dialog::backdrop{background:rgba(30,28,26,.7)}
+#lbimg{aspect-ratio:4/3;max-height:74vh}
+dialog figcaption{padding:12px 18px 0;font-style:italic}
+#lbx{font:inherit;font-size:16px;min-height:44px;margin:10px 18px 16px;padding:0 20px;border-radius:22px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);cursor:pointer}
+.contact p{margin:0 0 10px}
+.mail{font-size:clamp(22px,3vw,28px);overflow-wrap:anywhere}
+address{font-style:normal;color:var(--soft);margin-top:18px}
+footer{color:var(--soft);font-size:15px;padding-top:0}
+@media(max-width:760px){.hero,.two{grid-template-columns:minmax(0,1fr)}.hero .fd{max-width:420px}.two .fd{max-width:380px}}
+@media(max-width:600px){.tl li{grid-template-columns:minmax(0,1fr)}.gal{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:140px}}
+@media(prefers-reduced-motion:no-preference){.ink{stroke-dasharray:var(--l);stroke-dashoffset:var(--l);animation:ink 1.6s ease-out .2s forwards}@keyframes ink{to{stroke-dashoffset:0}}}
+</style>
+</head>
+<body>
+<!--
+  HOW TO EDIT THIS PAGE
+  - Open this file in TextEdit (Format > Make Plain Text) or VS Code.
+  - Change only the words between the tags, e.g. <p>change this text</p>.
+  - Look for the lines that start with "EDIT:" below.
+  - Save, then double-click the file to see it in your browser.
+-->
+
+<!-- EDIT: name, title, short intro and links -->
+<header class="band" style="padding-top:0" id="top">
+  <div class="wrap">
+    <nav aria-label="Sections">
+      <a class="home" href="#top">Nilakshi Das</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#photography">Photography</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <div>
+        <h1>Nilakshi Das</h1>
+        <p class="sub">Postdoctoral fellow in particle physics, Indian Institute of Technology Gandhinagar</p>
+        <p class="intro">I work on flavour physics. I study the decays of b hadrons and look for small signs of physics beyond the Standard Model.</p>
+        <div class="links">
+          <a href="https://inspirehep.net/authors/1768587">INSPIRE-HEP</a>
+          <a href="mailto:nilakshidas0225@gmail.com">nilakshidas0225@gmail.com</a>
+          <a href="mailto:nilakshi.das@iitgn.ac.in">nilakshi.das@iitgn.ac.in</a>
+        </div>
+      </div>
+      <figure class="fd"><svg id="d1" viewBox="0 0 400 230" role="img" aria-label="Feynman diagram of b to c tau antineutrino through a W boson"></svg><figcaption>b → c τ ν̄ through a W boson</figcaption></figure>
+    </div>
+  </div>
+</header>
+
+<hr>
+
+<!-- EDIT: About text -->
+<section class="band" id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <div class="two" style="align-items:start">
+      <div>
+        <p>I am a postdoctoral fellow at the Indian Institute of Technology Gandhinagar (IIT Gandhinagar). Before this, I was a postdoctoral fellow at the Institute of Physics (IOP), Bhubaneswar.</p>
+        <p>I did my PhD at the National Institute of Technology (NIT) Silchar with Dr. Rupak Dutta, and finished it in 2024.</p>
+      </div>
+      <div>
+        <p>My work mixes analytic calculation with numerical fits. I use the helicity formalism, angular distributions and fits of Wilson coefficients, mostly in Mathematica and FeynCalc.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- EDIT: Research paragraph -->
+<section class="band" id="research">
+  <div class="wrap">
+    <h2>Research</h2>
+    <div class="two">
+      <div>
+        <p>I work on flavour physics, mainly the semileptonic and rare decays of b hadrons. I study lepton flavour universality in b → cτν decays through their full angular distributions, and how a massive right-handed neutrino can change what we see in B → D* decays. I also study rare b → s transitions and Λ<sub>b</sub> decays in the Standard Model Effective Field Theory (SMEFT). Away from B physics, I have worked on quantum coherence in neutrino oscillations. My papers are listed on <a href="https://inspirehep.net/authors/1768587">INSPIRE-HEP</a>.</p>
+      </div>
+      <figure class="fd"><svg id="d2" viewBox="0 0 400 260" role="img" aria-label="Penguin diagram for b to s lepton pair"></svg><figcaption>A penguin diagram for b → s ℓ⁺ℓ⁻</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- EDIT: Experience. Copy one <li>...</li> line to add a new entry -->
+<section class="band" id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <ul class="tl">
+      <li><span class="yr">2024 – present</span><span>Postdoctoral fellow, IIT Gandhinagar</span></li>
+      <li><span class="yr">2024</span><span>Postdoctoral fellow, IOP Bhubaneswar</span></li>
+      <li><span class="yr">2018 – 2024</span><span>PhD in theoretical particle physics, NIT Silchar</span></li>
+    </ul>
+  </div>
+</section>
+
+<hr>
+
+<!-- EDIT: Photography. The photos themselves are set near the bottom of this file (search for "EDIT: photos") -->
+<section class="band" id="photography">
+  <div class="wrap">
+    <h2>Photography</h2>
+    <p class="lede">Away from physics, I take photographs.</p>
+    <div class="gal" id="gal"></div>
+  </div>
+</section>
+
+<dialog id="lb" aria-label="Photo"><figure><div id="lbimg"></div><figcaption id="lbcap"></figcaption></figure><button type="button" id="lbx">Close</button></dialog>
+
+<hr>
+
+<!-- EDIT: Contact, emails and address -->
+<section class="band contact" id="contact">
+  <div class="wrap two">
+    <div>
+      <h2>Contact</h2>
+      <p>I am always happy to talk about physics.</p>
+      <p class="mail"><a href="mailto:nilakshidas0225@gmail.com">nilakshidas0225@gmail.com</a><br><a href="mailto:nilakshi.das@iitgn.ac.in">nilakshi.das@iitgn.ac.in</a></p>
+      <address>Indian Institute of Technology Gandhinagar<br>Palaj, Gandhinagar 382055, Gujarat, India</address>
+    </div>
+    <figure class="fd"><svg id="d3" viewBox="0 0 400 200" role="img" aria-label="Box diagram for B meson mixing"></svg><figcaption>A box diagram for B⁰–B̄⁰ mixing</figcaption></figure>
+  </div>
+</section>
+
+<footer class="band"><div class="wrap">© 2026 Nilakshi Das</div></footer>
+
+<script>
+{
+const $=s=>document.querySelector(s);
+const SW=1.6;
+const f=n=>n.toFixed(1);
+/* straight fermion line with a mid arrow; rev=true points the arrow backwards (antiparticle) */
+const fer=(a,b,rev)=>{const dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy),ux=dx/L,uy=dy/L,s=rev?-1:1,mx=(a[0]+b[0])/2+ux*4*s,my=(a[1]+b[1])/2+uy*4*s,px=-uy,py=ux,k=7*s;
+  return '<line class="ink" style="--l:'+f(L)+'" x1="'+f(a[0])+'" y1="'+f(a[1])+'" x2="'+f(b[0])+'" y2="'+f(b[1])+'" stroke="currentColor" stroke-width="'+SW+'" stroke-linecap="round"/>'
+   +'<path d="M'+f(mx)+' '+f(my)+'L'+f(mx-ux*k+px*4.5)+' '+f(my-uy*k+py*4.5)+'L'+f(mx-ux*k-px*4.5)+' '+f(my-uy*k-py*4.5)+'Z" fill="currentColor"/>'};
+/* wavy boson along any curve p(t), t in [0,1] */
+const wave=(p,amp,wl)=>{const N=240;let pts=[],len=0,prev=p(0);for(let i=0;i<=N;i++){const q=p(i/N);if(i)len+=Math.hypot(q[0]-prev[0],q[1]-prev[1]);pts.push([q,len]);prev=q}
+  const n=Math.max(2,Math.round(len/wl));let d='';
+  pts.forEach(([q,s],i)=>{const j=Math.min(N,i+1),h=Math.max(0,i-1),tx=pts[j][0][0]-pts[h][0][0],ty=pts[j][0][1]-pts[h][0][1],T=Math.hypot(tx,ty)||1,o=amp*Math.sin(2*Math.PI*n*s/len);d+=(i?'L':'M')+f(q[0]-ty/T*o)+' '+f(q[1]+tx/T*o)});
+  return '<path class="ink" style="--l:'+f(len*1.6)+'" d="'+d+'" fill="none" stroke="currentColor" stroke-width="'+SW+'" stroke-linejoin="round"/>'};
+const seg=(a,b)=>t=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];
+const dot=p=>'<circle cx="'+p[0]+'" cy="'+p[1]+'" r="3" fill="currentColor"/>';
+const lab=(x,y,t,a)=>'<text x="'+x+'" y="'+y+'" text-anchor="'+(a||'middle')+'" fill="var(--ink)" font-family="Spectral, Georgia, serif" font-style="italic" font-size="19">'+t+'</text>';
+
+/* d1: b -> c W-, W- -> tau- nu-bar */
+{const V=[170,210],U=[262,110];
+ $('#d1').innerHTML=fer([20,V[1]],V)+fer(V,[380,V[1]])+wave(seg(V,U),5,13)+fer(U,[385,40])+fer(U,[385,140],true)+dot(V)+dot(U)
+  +lab(30,V[1]-12,'b')+lab(372,V[1]-12,'c','end')+lab(204,150,'W⁻','end')+lab(385,30,'τ⁻','end')+lab(385,168,'ν̄<tspan font-size="13" dy="4">τ</tspan>','end');}
+
+/* d2: penguin b -> s l+ l- */
+{const y=90,A=[110,y],B=[290,y],M=[200,y],C=[200,185];
+ const arc=t=>{const th=Math.PI*(1-t);return [200+90*Math.cos(th),y-62*Math.sin(th)]};
+ $('#d2').innerHTML=fer([20,y],A)+fer(A,M)+fer(M,B)+fer(B,[380,y])+wave(arc,5,13)+wave(seg(M,C),5,12)+fer(C,[310,250])+fer(C,[90,250],true)+dot(A)+dot(B)+dot(M)+dot(C)
+  +lab(30,y-12,'b')+lab(372,y-12,'s','end')+lab(155,y+26,'t')+lab(245,y+26,'t')+lab(200,y-74,'W⁻')+lab(220,148,'γ, Z','start')+lab(322,246,'ℓ⁻','start')+lab(78,246,'ℓ⁺','end');}
+
+/* d3: box diagram for B0 mixing */
+{const t=50,b=150,x1=130,x2=270;
+ $('#d3').innerHTML=fer([20,t],[x1,t])+fer([x1,t],[x2,t])+fer([x2,t],[380,t])+fer([20,b],[x1,b],true)+fer([x1,b],[x2,b],true)+fer([x2,b],[380,b],true)
+  +wave(seg([x1,t],[x1,b]),5,12)+wave(seg([x2,t],[x2,b]),5,12)+dot([x1,t])+dot([x2,t])+dot([x1,b])+dot([x2,b])
+  +lab(30,t-12,'b')+lab(372,t-12,'d','end')+lab(200,t-12,'t')+lab(30,b+28,'d̄')+lab(372,b+28,'b̄','end')+lab(200,b+28,'t̄')+lab(x1-14,(t+b)/2+6,'W','end')+lab(x2+14,(t+b)/2+6,'W','start');}
+
+/* EDIT: photos
+   1. Make a folder called "photos" next to this index.html file.
+   2. Put your pictures in it, e.g. photos/1.jpg, photos/2.jpg ...
+   3. Below, fill src and cap for each photo, e.g.
+        {src:'photos/1.jpg',cap:'Brahmaputra at sunset',pal:[...]},
+      An empty src keeps the soft drawn placeholder.
+   4. The first photo is shown large. Add more lines to add more photos. */
+const PH=[
+{src:'',cap:'',pal:['#e9dfd3','#f7f2eb','#cdbca8','#ab9781','#857260']},
+{src:'',cap:'',pal:['#dde5ea','#f3f6f7','#b9c7cd','#95a7ae','#71858c']},
+{src:'',cap:'',pal:['#e8e0e6','#f6f2f5','#cabac6','#a998a5','#7e6e7b']},
+{src:'',cap:'',pal:['#e2e8da','#f4f6f0','#bfcdb3','#9bad8e','#728566']},
+{src:'',cap:'',pal:['#f0e2d4','#f9f2ea','#d9c1a9','#b69c83','#89725c']},
+{src:'',cap:'',pal:['#dce2ee','#f2f4f9','#bac3d8','#97a1bd','#707a98']}
+];
+const scene=(c,i,gid)=>{gid=gid||'g'+i;let r=i*7919+11;const rnd=()=>(r=r*16807%2147483647)/2147483647;
+  const hills=[2,3,4].map((k,j)=>{const y0=160+j*40;let d='M0 300 L0 '+y0;for(let x=0;x<=400;x+=50){d+=' Q'+(x+25)+' '+(y0-rnd()*(50-j*10)).toFixed(0)+' '+(x+50)+' '+(y0-rnd()*(30-j*6)).toFixed(0)}return '<path d="'+d+' L400 300Z" fill="'+c[k]+'"/>'}).join('');
+  return '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="'+gid+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+c[0]+'"/><stop offset="1" stop-color="'+c[1]+'"/></linearGradient></defs><rect width="400" height="300" fill="url(#'+gid+')"/><circle cx="'+(90+rnd()*220).toFixed(0)+'" cy="'+(70+rnd()*40).toFixed(0)+'" r="20" fill="#fff" opacity=".7"/>'+hills+'</svg>'};
+const pic=(x,i,gid)=>x.src?'<img src="'+x.src+'" alt="'+(x.cap||'Photograph')+'" loading="lazy">':scene(x.pal,i,gid);
+$('#gal').innerHTML=PH.map((x,i)=>'<button type="button" id="ph'+i+'" data-i="'+i+'" class="'+(i==0?'big':'')+'" aria-label="Open photo '+(i+1)+'">'+pic(x,i)+(x.cap?'<span>'+x.cap+'</span>':'')+'</button>').join('');
+const lb=$('#lb');
+$('#gal').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const i=+b.dataset.i;$('#lbimg').innerHTML=pic(PH[i],i,'lbg');$('#lbcap').textContent=PH[i].cap;try{lb.showModal()}catch(err){}});
+$('#lbx').addEventListener('click',()=>lb.close());
+lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+}
+</script>
+</body>
+</html>
