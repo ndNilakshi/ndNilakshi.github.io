@@ -73,17 +73,16 @@ footer{color:var(--soft);font-size:15px;padding-top:0}
 <body>
 <!--
   HOW TO EDIT THIS PAGE
-  - Open this file in TextEdit (Format > Make Plain Text) or VS Code.
-  - Change only the words between the tags, e.g. <p>change this text</p>.
-  - Look for the lines that start with "EDIT:" below.
-  - Save, then double-click the file to see it in your browser.
+  - Easiest: open editor.html on your Mac, change the boxes, click Save.
+  - Or edit by hand: change only the words between the tags, e.g. <p>change this text</p>.
+    Look for the lines that start with "EDIT:" below.
 -->
 
 <!-- EDIT: name, title, short intro and links -->
 <header class="band" style="padding-top:0" id="top">
   <div class="wrap">
     <nav aria-label="Sections">
-      <a class="home" href="#top">Nilakshi Das</a>
+      <a class="home" href="#top" data-edit="name">Nilakshi Das</a>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#research">Research</a></li>
@@ -94,13 +93,14 @@ footer{color:var(--soft);font-size:15px;padding-top:0}
     </nav>
     <div class="hero">
       <div>
-        <h1>Nilakshi Das</h1>
-        <p class="sub">Postdoctoral fellow in particle physics, Indian Institute of Technology Gandhinagar</p>
-        <p class="intro">I work on flavour physics. I study the decays of b hadrons and look for small signs of physics beyond the Standard Model.</p>
+        <h1 data-edit="name">Nilakshi Das</h1>
+        <p class="sub" data-edit="title">Postdoctoral fellow in particle physics, Indian Institute of Technology Gandhinagar</p>
+        <p class="intro" data-edit="intro">I work on flavour physics. I study the decays of b hadrons and look for small signs of physics beyond the Standard Model.</p>
         <div class="links">
-          <a href="https://inspirehep.net/authors/1768587">INSPIRE-HEP</a>
-          <a href="mailto:nilakshidas0225@gmail.com">nilakshidas0225@gmail.com</a>
-          <a href="mailto:nilakshi.das@iitgn.ac.in">nilakshi.das@iitgn.ac.in</a>
+          <a href="https://inspirehep.net/authors/1768587" data-link="inspire">INSPIRE-HEP</a>
+          <a href="https://www.linkedin.com/in/nilakshi-das-b6b098233/" data-link="linkedin">LinkedIn</a>
+          <a href="mailto:nilakshidas0225@gmail.com" data-email="1">nilakshidas0225@gmail.com</a>
+          <a href="mailto:nilakshi.das@iitgn.ac.in" data-email="2">nilakshi.das@iitgn.ac.in</a>
         </div>
       </div>
       <figure class="fd"><svg id="d1" viewBox="0 0 400 230" role="img" aria-label="Feynman diagram of b to c tau antineutrino through a W boson"></svg><figcaption>b → c τ ν̄ through a W boson</figcaption></figure>
@@ -116,11 +116,11 @@ footer{color:var(--soft);font-size:15px;padding-top:0}
     <h2>About</h2>
     <div class="two" style="align-items:start">
       <div>
-        <p>I am a postdoctoral fellow at the Indian Institute of Technology Gandhinagar (IIT Gandhinagar). Before this, I was a postdoctoral fellow at the Institute of Physics (IOP), Bhubaneswar.</p>
-        <p>I did my PhD at the National Institute of Technology (NIT) Silchar with Dr. Rupak Dutta, and finished it in 2024.</p>
+        <p data-edit="about1">I am a postdoctoral fellow at the Indian Institute of Technology Gandhinagar (IIT Gandhinagar). Before this, I was a postdoctoral fellow at the Institute of Physics (IOP), Bhubaneswar.</p>
+        <p data-edit="about2">I did my PhD at the National Institute of Technology (NIT) Silchar, and finished it in 2024.</p>
       </div>
       <div>
-        <p>My work mixes analytic calculation with numerical fits. I use the helicity formalism, angular distributions and fits of Wilson coefficients, mostly in Mathematica and FeynCalc.</p>
+        <p data-edit="about3">My work mixes analytic calculation with numerical fits. I use the helicity formalism, angular distributions and fits of Wilson coefficients, mostly in Mathematica and FeynCalc.</p>
       </div>
     </div>
   </div>
@@ -134,7 +134,7 @@ footer{color:var(--soft);font-size:15px;padding-top:0}
     <h2>Research</h2>
     <div class="two">
       <div>
-        <p>I work on flavour physics, mainly the semileptonic and rare decays of b hadrons. I study lepton flavour universality in b → cτν decays through their full angular distributions, and how a massive right-handed neutrino can change what we see in B → D* decays. I also study rare b → s transitions and Λ<sub>b</sub> decays in the Standard Model Effective Field Theory (SMEFT). Away from B physics, I have worked on quantum coherence in neutrino oscillations. My papers are listed on <a href="https://inspirehep.net/authors/1768587">INSPIRE-HEP</a>.</p>
+        <p data-edit="research">I work on flavour physics, mainly the semileptonic and rare decays of b hadrons. I study lepton flavour universality in b → cτν decays through their full angular distributions, and how a massive right-handed neutrino can change what we see in B → D* decays. I also study rare b → s transitions and Λ<sub>b</sub> decays in the Standard Model Effective Field Theory (SMEFT). Away from B physics, I have worked on quantum coherence in neutrino oscillations. My papers are listed on <a href="https://inspirehep.net/authors/1768587" data-link="inspire">INSPIRE-HEP</a>.</p>
       </div>
       <figure class="fd"><svg id="d2" viewBox="0 0 400 260" role="img" aria-label="Penguin diagram for b to s lepton pair"></svg><figcaption>A penguin diagram for b → s ℓ⁺ℓ⁻</figcaption></figure>
     </div>
@@ -147,7 +147,7 @@ footer{color:var(--soft);font-size:15px;padding-top:0}
 <section class="band" id="experience">
   <div class="wrap">
     <h2>Experience</h2>
-    <ul class="tl">
+    <ul class="tl" data-edit-list="experience">
       <li><span class="yr">2024 – present</span><span>Postdoctoral fellow, IIT Gandhinagar</span></li>
       <li><span class="yr">2024</span><span>Postdoctoral fellow, IOP Bhubaneswar</span></li>
       <li><span class="yr">2018 – 2024</span><span>PhD in theoretical particle physics, NIT Silchar</span></li>
@@ -161,7 +161,7 @@ footer{color:var(--soft);font-size:15px;padding-top:0}
 <section class="band" id="photography">
   <div class="wrap">
     <h2>Photography</h2>
-    <p class="lede">Away from physics, I take photographs.</p>
+    <p class="lede" data-edit="photolede">Away from physics, I take photographs.</p>
     <div class="gal" id="gal"></div>
   </div>
 </section>
@@ -175,16 +175,29 @@ footer{color:var(--soft);font-size:15px;padding-top:0}
   <div class="wrap two">
     <div>
       <h2>Contact</h2>
-      <p>I am always happy to talk about physics.</p>
-      <p class="mail"><a href="mailto:nilakshidas0225@gmail.com">nilakshidas0225@gmail.com</a><br><a href="mailto:nilakshi.das@iitgn.ac.in">nilakshi.das@iitgn.ac.in</a></p>
-      <address>Indian Institute of Technology Gandhinagar<br>Palaj, Gandhinagar 382055, Gujarat, India</address>
+      <p data-edit="contactline">I am always happy to talk about physics.</p>
+      <p class="mail"><a href="mailto:nilakshidas0225@gmail.com" data-email="1">nilakshidas0225@gmail.com</a><br><a href="mailto:nilakshi.das@iitgn.ac.in" data-email="2">nilakshi.das@iitgn.ac.in</a></p>
+      <p><a href="https://www.linkedin.com/in/nilakshi-das-b6b098233/" data-link="linkedin">LinkedIn</a></p>
+      <address data-edit="address">Indian Institute of Technology Gandhinagar<br>Palaj, Gandhinagar 382055, Gujarat, India</address>
     </div>
     <figure class="fd"><svg id="d3" viewBox="0 0 400 200" role="img" aria-label="Box diagram for B meson mixing"></svg><figcaption>A box diagram for B⁰–B̄⁰ mixing</figcaption></figure>
   </div>
 </section>
 
-<footer class="band"><div class="wrap">© 2026 Nilakshi Das</div></footer>
+<footer class="band"><div class="wrap">© 2026 <span data-edit="name">Nilakshi Das</span></div></footer>
 
+<!-- EDIT: photos. Upload each photo next to index.html, then put its file name in "src" and a caption in "cap".
+     An empty "src" shows a soft drawn placeholder. The first photo is shown large. -->
+<script type="application/json" id="photos">
+[
+{"src":"","cap":""},
+{"src":"","cap":""},
+{"src":"","cap":""},
+{"src":"","cap":""},
+{"src":"","cap":""},
+{"src":"","cap":""}
+]
+</script>
 <script>
 {
 const $=s=>document.querySelector(s);
@@ -220,26 +233,22 @@ const lab=(x,y,t,a)=>'<text x="'+x+'" y="'+y+'" text-anchor="'+(a||'middle')+'" 
   +wave(seg([x1,t],[x1,b]),5,12)+wave(seg([x2,t],[x2,b]),5,12)+dot([x1,t])+dot([x2,t])+dot([x1,b])+dot([x2,b])
   +lab(30,t-12,'b')+lab(372,t-12,'d','end')+lab(200,t-12,'t')+lab(30,b+28,'d̄')+lab(372,b+28,'b̄','end')+lab(200,b+28,'t̄')+lab(x1-14,(t+b)/2+6,'W','end')+lab(x2+14,(t+b)/2+6,'W','start');}
 
-/* EDIT: photos
-   1. Make a folder called "photos" next to this index.html file.
-   2. Put your pictures in it, e.g. photos/1.jpg, photos/2.jpg ...
-   3. Below, fill src and cap for each photo, e.g.
-        {src:'photos/1.jpg',cap:'Brahmaputra at sunset',pal:[...]},
-      An empty src keeps the soft drawn placeholder.
-   4. The first photo is shown large. Add more lines to add more photos. */
-const PH=[
-{src:'',cap:'',pal:['#e9dfd3','#f7f2eb','#cdbca8','#ab9781','#857260']},
-{src:'',cap:'',pal:['#dde5ea','#f3f6f7','#b9c7cd','#95a7ae','#71858c']},
-{src:'',cap:'',pal:['#e8e0e6','#f6f2f5','#cabac6','#a998a5','#7e6e7b']},
-{src:'',cap:'',pal:['#e2e8da','#f4f6f0','#bfcdb3','#9bad8e','#728566']},
-{src:'',cap:'',pal:['#f0e2d4','#f9f2ea','#d9c1a9','#b69c83','#89725c']},
-{src:'',cap:'',pal:['#dce2ee','#f2f4f9','#bac3d8','#97a1bd','#707a98']}
+const PAL=[
+['#e9dfd3','#f7f2eb','#cdbca8','#ab9781','#857260'],
+['#dde5ea','#f3f6f7','#b9c7cd','#95a7ae','#71858c'],
+['#e8e0e6','#f6f2f5','#cabac6','#a998a5','#7e6e7b'],
+['#e2e8da','#f4f6f0','#bfcdb3','#9bad8e','#728566'],
+['#f0e2d4','#f9f2ea','#d9c1a9','#b69c83','#89725c'],
+['#dce2ee','#f2f4f9','#bac3d8','#97a1bd','#707a98']
 ];
+let PH=[];try{PH=JSON.parse($('#photos').textContent)}catch(err){}
+PH=PH.map((x,i)=>({src:x.src||'',cap:x.cap||'',pal:PAL[i%PAL.length]}));
 const scene=(c,i,gid)=>{gid=gid||'g'+i;let r=i*7919+11;const rnd=()=>(r=r*16807%2147483647)/2147483647;
   const hills=[2,3,4].map((k,j)=>{const y0=160+j*40;let d='M0 300 L0 '+y0;for(let x=0;x<=400;x+=50){d+=' Q'+(x+25)+' '+(y0-rnd()*(50-j*10)).toFixed(0)+' '+(x+50)+' '+(y0-rnd()*(30-j*6)).toFixed(0)}return '<path d="'+d+' L400 300Z" fill="'+c[k]+'"/>'}).join('');
   return '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="'+gid+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+c[0]+'"/><stop offset="1" stop-color="'+c[1]+'"/></linearGradient></defs><rect width="400" height="300" fill="url(#'+gid+')"/><circle cx="'+(90+rnd()*220).toFixed(0)+'" cy="'+(70+rnd()*40).toFixed(0)+'" r="20" fill="#fff" opacity=".7"/>'+hills+'</svg>'};
-const pic=(x,i,gid)=>x.src?'<img src="'+x.src+'" alt="'+(x.cap||'Photograph')+'" loading="lazy">':scene(x.pal,i,gid);
-$('#gal').innerHTML=PH.map((x,i)=>'<button type="button" id="ph'+i+'" data-i="'+i+'" class="'+(i==0?'big':'')+'" aria-label="Open photo '+(i+1)+'">'+pic(x,i)+(x.cap?'<span>'+x.cap+'</span>':'')+'</button>').join('');
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
+const pic=(x,i,gid)=>x.src?'<img src="'+esc(x.src)+'" alt="'+esc(x.cap||'Photograph')+'" loading="lazy">':scene(x.pal,i,gid);
+$('#gal').innerHTML=PH.map((x,i)=>'<button type="button" id="ph'+i+'" data-i="'+i+'" class="'+(i==0?'big':'')+'" aria-label="Open photo '+(i+1)+'">'+pic(x,i)+(x.cap?'<span>'+esc(x.cap)+'</span>':'')+'</button>').join('');
 const lb=$('#lb');
 $('#gal').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const i=+b.dataset.i;$('#lbimg').innerHTML=pic(PH[i],i,'lbg');$('#lbcap').textContent=PH[i].cap;try{lb.showModal()}catch(err){}});
 $('#lbx').addEventListener('click',()=>lb.close());
